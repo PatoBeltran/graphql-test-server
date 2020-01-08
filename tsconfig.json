@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es2019", // node 12.13 https://node.green/#ES2019
+        "jsx": "react",
+        "module": "commonjs",
+        "forceConsistentCasingInFileNames": true,
+        "experimentalDecorators": true,
+        "noImplicitAny": false,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "declaration": false,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "baseUrl": "./src",
+    },
+    "include": [
+        "src"
+    ]
+}

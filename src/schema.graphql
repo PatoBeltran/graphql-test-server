@@ -1,0 +1,42 @@
+# Query Types
+type App {
+  id: ID!
+  name: String!
+  devices: [Device!]
+  templates: [Template!]
+}
+type Device {
+  id: ID!
+  name: String!
+  template: Template
+}
+type Template {
+  id: ID!
+  name: String!
+  devices: [Device!]
+}
+type User {
+  id: ID!
+  name: String!
+  apps: [App!]
+}
+type Query {
+  viewer: User!
+}
+
+# Mutations
+type Mutation {
+  newApp(name: String!): App
+  newDevice(appId: ID!, device: NewDeviceInput): Device
+  newTemplate(appId: ID!, name: String!): Template
+  migrateDevice(data: MigrateDeviceInput): Device
+}
+
+input NewDeviceInput {
+  name: String!
+  templateId: ID
+}
+input MigrateDeviceInput {
+  deviceId: ID!
+  templateId: ID!
+}

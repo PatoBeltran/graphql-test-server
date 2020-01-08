@@ -1,0 +1,17 @@
+overwrite: true
+schema: "./src/schema.graphql"
+documents: null
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
+    config:
+      mappers:
+        User: ../dataModel#Model#User
+        App: ../dataModel#Model#App
+        Device: ../dataModel#Model#Device
+        Template: ../dataModel#Model#Template
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
